@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Dialogs</title>
+    <link href="images/favicon.ico" rel="icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js"></script>
+    <script type="module">
+        import { alert_function2, confirm_function2, prompt_function2 } from './customdialog.js';
+
+        function alert_function(e) {
+            alert("Alert button is doing great!");
+            e.preventDefault();
+        }
+
+        function confirm_function(e) {
+            const text = "Test of confirm button.";
+            const output = document.getElementById('output');
+            const answer = confirm(text);
+
+            output.innerHTML = `The value returned by the confirm method is : ${answer}`;
+            e.preventDefault();
+        }
+
+        function prompt_function(e) {
+            const output = document.getElementById('output');
+            const dirty = prompt("Test of prompt button:", "Prompt?");
+            const input = DOMPurify.sanitize(dirty);
+
+            if (input != null) {
+                output.innerHTML = `The value returned by the prompt method is : ${input}`;
+            }
+
+            e.preventDefault();
+        }
+
+        function safer_prompt_function(e) {
+            const output = document.getElementById('output');
+            const dirty = prompt("Test of safer prompt button:", "Safer prompt?");
+            const input = DOMPurify.sanitize(dirty);
+
+            if (dirty != null) {
+                output.innerHTML = `The value returned by the safer prompt method is : ${input}`;
+            }
+            else {
+                output.innerHTML = "User didn’t enter anything";
+            }
+
+            e.preventDefault();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const alert = document.getElementById('alert');
+            const confirm = document.getElementById('confirm');
+            const prompt = document.getElementById('prompt');
+            const safer_prompt = document.getElementById('safer_prompt');
+            const alert2 = document.getElementById('alert2');
+            const confirm2 = document.getElementById('confirm2');
+            const prompt2 = document.getElementById('prompt2');
+
+            alert.addEventListener('click', alert_function);
+            confirm.addEventListener('click', confirm_function);
+            prompt.addEventListener('click', prompt_function);
+            safer_prompt.addEventListener('click', safer_prompt_function);
+            alert2.addEventListener('click', alert_function2);
+            confirm2.addEventListener('click', confirm_function2);
+            prompt2.addEventListener('click', prompt_function2);
+        });
+    </script>
+
+    <template id="template1">
+        <div id="div1">
+            <dialog open>
+                <p>Alert pressed.</p>
+                <div>
+                    <button id="ok1">OK</button>
+                </div>
+            </dialog>
+        </div>
+    </template>
+
+    <template id="template2">
+        <div id="div2">
+            <dialog open>
+                <p>Do you confirm?</p>
+                <div>
+                    <button id="ok2">OK</button>
+                    <button id="cancel2">Cancel</button>
+                </div>
+            </dialog>
+        </div>
+    </template>
+
+    <template id="template3">
+        <div id="div3">
+            <dialog open>
+                <label for="prompt_input">What is your name?</label>
+                <input type="text" id="prompt_input" name="prompt_input">
+                <div>
+                    <button id="ok3">OK</button>
+                    <button id="cancel3">Cancel</button>
+                </div>
+            </dialog>
+        </div>
+    </template>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Simple Dialogs</h1>
+    </header>
+
+    <button type="button" id="alert">Alert</button>
+    <button type="button" id="confirm">Confirm</button>
+    <button type="button" id="prompt">Prompt</button>
+    <button type="button" id="safer_prompt">Safer Prompt</button>
+    <br>
+
+    <p>Output: <output id="output"></output></p>
+
+    <hr>
+    <hr>
+
+    <header>
+        <h1>Custom Dialogs</h1>
+    </header>
+
+    <button type="button" id="alert2">Alert</button>
+    <button type="button" id="confirm2">Confirm</button>
+    <button type="button" id="prompt2">Prompt</button>
+    <br>
+
+    <p>Output: <output id="output2"></output></p>
+    <div id="dialog_place"></div>
+</body>
+
+</html>

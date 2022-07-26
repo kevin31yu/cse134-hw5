@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Experiments Page</title>
+        <link href="images/favicon.ico" rel="icon">
+    </head>
+
+    <body>
+        <section>
+            <header>
+                <h3><i>Below is the Experiments section:</i></h3>
+                <p>Created by <b>Kevin Yu</b></p>
+            </header>
+            <aside>
+                <p>This is a <code>code</code> tag experiment.</p>
+            </aside>
+        </section>
+        <hr>
+
+        <section>
+            <h2> Here are the audio and video:</h2>
+            <audio controls>
+                <source src="audio/horse.ogv" type="audio/ogg">
+            </audio>
+            <video width="320" height="240" controls>
+                <source src="video/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <button type="button">Like?</button>
+        </section> 
+        <hr>
+
+        <section>
+            <h3>This is a <code>canvas</code> tag experiment.</h3>
+            <canvas id="canvas1">
+                Your browser does not support the canvas tag.
+            </canvas>
+                
+            <script>
+                var canvas = document.getElementById("canvas1");
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "gray";
+                ctx.fillRect(0, 0, 160, 160);
+            </script>
+
+            <p>
+                Hi,
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="orange" stroke-width="4" fill="yellow"></circle>
+                </svg>
+                this is a <code>svg</code> tag inline experiment!
+            </p>
+            
+        </section>
+        <hr>
+            
+        <section title="sushi">
+            <h3>My favorite sushi is? Try to zoom out?</h3>
+            <p>This is a <code>picture</code> tag experiment.</p>
+            <picture>
+                <source media="(min-width:1800px)" srcset="images/sushi_small.jfif">
+                <img src="images/sushi_big.jfif" alt="sold out sushi">
+            </picture>
+        </section>
+        <hr>
+
+        <section>
+            <h3>This is a <code>form</code> and related tags experiment.</h3>
+            <form>
+                <label for="sushi">What is your favorite sushi?</label>
+                <select name="sushi" id="sushi">
+                  <optgroup label="Sushi">
+                    <option value="salmon">Salmon</option>
+                    <option value="tuna">Tuna</option>
+                  </optgroup>
+                  <optgroup label="Sushi Roll">
+                    <option value="salmonRoll">Salmon roll</option>
+                    <option value="tunaRoll">Tuna roll</option>
+                  </optgroup>
+                </select>
+                <br><br>
+
+                <fieldset>
+                    <legend>Recommand restaurant:</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" list="cityList"><br><br>
+                    <datalist id="cityList">
+                        <option value="San Diego"></option>
+                        <option value="Irvine"></option>
+                        <option value="Los Angeles"></option>
+                    </datalist>
+                </fieldset>
+                <br><br>
+
+                <label for="feedback">Any feedback?</label>
+                <br>
+                <textarea name="feedback" id="feedback" rows="3" cols="20">Do you have any feedback?</textarea>
+                <br><br>
+
+                <input type="submit" value="Submit?">
+            </form>
+        </section>
+        <hr>
+
+        <section>
+            <h3>This is a <code>figure</code> and related tags experiment.</h3>
+            <figure>
+                <img src="images/sushi_big.jfif" alt="sold out sushi">
+                <figcaption>Fig.1 - Sushi!!!</figcaption>
+            </figure>
+            <br>
+
+            <p>This is a <code>table</code> and related tags experiment.</p>
+            <table>
+                <caption>Polling</caption>
+                <colgroup>
+                    <col span="1" title="sushi">
+                    <col title="vote">
+                </colgroup>
+                <tr>
+                  <th>Sushi</th>
+                  <th>Vote?</th>
+                </tr>
+                <tr>
+                  <td>Salmon</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>Tuna</td>
+                  <td>20</td>
+                </tr>
+              </table>
+        </section>
+        <hr>
+
+        <div>
+            <h3>This is a <code>iframe</code> tag experiment.</h3>
+            <iframe src="index.html" title="index" width="400" height="400"></iframe>
+        </div>
+        <hr>
+
+        <section>
+            <h3>Why am I here?</h3>
+            <template>
+                Oops! You found me!
+            </template>
+        </section>
+        <hr>
+
+
+        <footer>
+            This website is created by <em>Kevin Yu</em>.
+        </footer>
+    </body>
+
+</html>

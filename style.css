@@ -1,0 +1,103 @@
+:root {
+    --body-color: lightblue;
+    --border-color: royalblue;
+    --section-distance: 1rem;
+}
+
+body {
+    background-image: url("images/background.jpg");
+    background-color: var(--body-color);
+    font-size: 20px;
+}
+
+@keyframes titleAnimation {
+    0% {color: var(--border-color);}
+    50% {color:green;}
+    100% {color:orangered;}
+}
+
+body > header > h1 {
+    color: royalblue;
+    font-size: 50px;
+    text-align: center;
+    animation-name: titleAnimation;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: 10;
+    transition: transform 2s;
+}
+
+body > header > h1:hover {
+    transform: translate(0px, 60px);
+}
+
+body main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+body main div#right-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+body main div section {
+    border: 3px dashed var(--border-color);
+    padding: var(--section-distance);
+    margin: var(--section-distance);
+}
+
+body main div section:hover {
+    border: 3px dashed orangered;
+    padding: var(--section-distance);
+    margin: var(--section-distance);
+}
+
+body h2 {
+    color: orangered;
+    font-family: 'Edu SA Beginner', Arial, Helvetica, sans-serif;
+    transition: font-size 2s;
+}
+
+body h2:hover {
+    font-size: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+    body main div#right-column {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+#nav_bar {
+    margin: 1rem;
+    padding: 3rem;
+    border-bottom: 3px solid royalblue;
+}
+
+nav a {
+    margin: 1rem;
+    padding: 1rem;
+    border: 3px solid royalblue;
+    background-color: lightblue;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color:orangered;
+    border-color: orangered;
+}
+
+nav span {
+    color: orangered;
+    font-size: xx-large;
+}
