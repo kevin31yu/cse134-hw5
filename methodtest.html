@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>HW 5</title>
+    <meta charset="utf-8">
+    <title>HW 5 Part 1</title>
+    <script type="module" src="methodtest.js"></script>
 </head>
 
 <body>
+    <header>
+        <h1>HTTP with JavaScript</h1>
+    </header>
 
+    <form action="https://httpbin.org/" id="method_form">
+        <div>
+            <!--todo-->
+            <div>
+                <label for="user_name">Username: </label>
+                <input type="text" name="user_name" id="user_name">
+            </div>
+
+            <div>
+                <label for="user_pass">Password: </label>
+                <input type="password" name="user_pass" id="user_pass">
+            </div>
+        </div>
+        <div>
+            <button type="button" id="postBtn">postBtn</button>
+            <button type="button" id="getBtn">getBtn</button>
+            <button type="button" id="putBtn">putBtn</button>
+            <button type="button" id="deleteBtn">deleteBtn</button>
+        </div>
+
+        <fieldset>
+            <legend>Response:</legend>
+            <output id="response"></output>
+        </fieldset>
+    </form>
 </body>
 
 </html>
