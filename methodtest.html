@@ -14,16 +14,24 @@
 
     <form action="https://httpbin.org/" id="method_form">
         <div>
-            <!--todo-->
             <div>
-                <label for="user_name">Username: </label>
-                <input type="text" name="user_name" id="user_name">
+                <label for="article_id">ID: </label>
+                <input type="text" name="article_id" id="article_id">
             </div>
+            <br>
 
             <div>
-                <label for="user_pass">Password: </label>
-                <input type="password" name="user_pass" id="user_pass">
+                <label for="article_title">Title: </label>
+                <input type="text" name="article_title" id="article_title">
             </div>
+            <br>
+
+            <div>
+                <label for="article_body">Body: </label>
+                <textarea name="article_body" id="article_body" rows="4" cols="20"></textarea>
+            </div>
+
+            <input name="article_date" id="article_date" hidden>
         </div>
         <div>
             <button type="button" id="postBtn">postBtn</button>

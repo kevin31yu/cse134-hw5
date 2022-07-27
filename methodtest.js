@@ -1,4 +1,6 @@
 async function post_function(e) {
+    document.getElementById("article_date").value = new Date();
+
     let form = document.getElementById('method_form');
 
     let method = "post";
@@ -31,11 +33,41 @@ async function get_function(e) {
 }
 
 async function put_function(e) {
+    document.getElementById("article_date").value = new Date();
+
+    let form = document.getElementById('method_form');
+
+    let method = "put";
+    let endpoint = (form.action + method);
+    let payload = new FormData(form);
+
+    let request = await fetch(endpoint, {
+        method: method,
+        body: payload
+    });
+
+    document.getElementById('response').innerHTML = await request.text();
+    document.getElementById('response').style = "white-space: pre;"
 
     e.preventDefault();
 }
 
 async function delete_function(e) {
+    document.getElementById("article_date").value = new Date();
+
+    let form = document.getElementById('method_form');
+
+    let method = "delete";
+    let endpoint = (form.action + method);
+    let payload = new FormData(form);
+
+    let request = await fetch(endpoint, {
+        method: method,
+        body: payload
+    });
+
+    document.getElementById('response').innerHTML = await request.text();
+    document.getElementById('response').style = "white-space: pre;"
 
     e.preventDefault();
 }
@@ -50,6 +82,4 @@ window.addEventListener('DOMContentLoaded', () => {
     getBtn.addEventListener('click', get_function);
     putBtn.addEventListener('click', put_function);
     deleteBtn.addEventListener('click', delete_function);
-
-    //console.log(`Initialized at ${new Date()}`);
 });
